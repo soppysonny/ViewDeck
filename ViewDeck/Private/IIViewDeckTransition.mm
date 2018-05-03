@@ -68,8 +68,8 @@ NS_ASSUME_NONNULL_BEGIN
 
         _centerViewController = viewDeckController.centerViewController;
         _centerView = _centerViewController.view;
-        _initialCenterFrame = [layoutSupport frameForSide:IIViewDeckSideNone openSide:fromSide];
-        _finalCenterFrame = [layoutSupport frameForSide:IIViewDeckSideNone openSide:toSide];
+        _initialCenterFrame = _centerView.frame;
+        _finalCenterFrame = _initialCenterFrame;
 
         IIViewDeckSide side = (IIViewDeckSide)(fromSide | toSide);
         _openSide = side;
