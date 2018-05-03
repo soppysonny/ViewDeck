@@ -80,7 +80,17 @@ NSString* NSStringFromIIViewDeckSide(IIViewDeckSide side) {
 @implementation IIViewDeckController
 
 II_DELEGATE_PROXY(IIViewDeckControllerDelegate);
+- (void)updateTransitionGesture:(UIGestureRecognizer *)gest otherView:(UIView *)otherView{
+    [self interactiveTransitionRecognized:gest];
+}
 
+- (void)beginTransitionGesture:(UIGestureRecognizer *)recognizer otherView:(UIView *)otherView{
+    [self interactiveTransitionRecognized:recognizer];
+}
+
+- (void)endTransition:(UIGestureRecognizer *)recognizer otherView:(UIView *)otherView{
+    [self interactiveTransitionRecognized:recognizer];
+}
 #pragma mark - Object Initialization
 
 - (instancetype)initWithCenterViewController:(UIViewController*)centerViewController {
