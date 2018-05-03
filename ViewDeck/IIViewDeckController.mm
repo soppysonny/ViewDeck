@@ -379,7 +379,7 @@ __unused static inline BOOL IIIsAllowedTransition(IIViewDeckSide fromSide, IIVie
 - (void)interactiveTransitionRecognized:(UIGestureRecognizer *)recognizer {
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan: {
-            NSParameterAssert(!self.currentInteractiveGesture);
+            self.currentInteractiveGesture = nil;
             self.currentInteractiveGesture = recognizer;
 
             IIViewDeckSide side = IIViewDeckSideNone;
