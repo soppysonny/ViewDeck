@@ -141,7 +141,9 @@ FOUNDATION_EXPORT NSString* NSStringFromIIViewDeckSide(IIViewDeckSide side);
  */
 @interface IIViewDeckController : UIViewController
 
-
+- (void)updateTransitionGesture:(UIGestureRecognizer *)gest otherView:(UIView *)otherView;
+- (void)endTransition:(UIGestureRecognizer *)recognizer otherView:(UIView *)otherView;
+- (void)beginTransitionGesture:(UIGestureRecognizer *)recognizer otherView:(UIView *)otherView;
 /// @name Initializing a View Deck Controller
 
 /**
